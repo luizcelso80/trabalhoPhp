@@ -7,21 +7,21 @@ abstract class Crud extends DB {
 	protected $table;
 
 	abstract public function insert();
-	abstract public function update($codigo);
+	abstract public function update($alu_id);
 
-	public function find($codigo) {
-		$sql  = "SELECT * FROM $this->table WHERE alu_id = :codigo";
+	public function find($alu_id) {
+		$sql  = "SELECT * FROM $this->table WHERE alu_id = :alu_id";
 		$stmt = DB::prepare($sql);
-		$stmt->bindParam(':codigo', $codigo, PDO::PARAM_INT);
+		$stmt->bindParam(':alu_id', $alu_id, PDO::PARAM_INT);
 		$stmt->execute();
 		return $stmt->fetch();
 	}
 
-	public function encontrarNome($nome) {
+	public function encontrarAlu_nome($alu_nome) {
 
-		$sql  = "SELECT * FROM $this->table WHERE nome LIKE ?";
+		$sql  = "SELECT * FROM $this->table WHERE alu_nome LIKE ?";
 		$stmt = DB::prepare($sql);
-		$stmt->bindValue(1, "%$nome%");
+		$stmt->bindValue(1, "%$alu_nome%");
 		$stmt->execute();
 		return $stmt->fetch();
 
@@ -34,10 +34,10 @@ abstract class Crud extends DB {
 		return $stmt->fetchAll();
 	}
 
-	public function delete($codigo) {
-		$sql  = "DELETE FROM $this->table WHERE codigo = :codigo";
+	public function delete($alu_id) {
+		$sql  = "DELETE FROM $this->table WHERE alu_id = :alu_id";
 		$stmt = DB::prepare($sql);
-		$stmt->bindParam(':codigo', $codigo, PDO::PARAM_INT);
+		$stmt->bindParam(':alu_id', $alu_id, PDO::PARAM_INT);
 		return $stmt->execute();
 	}
 
