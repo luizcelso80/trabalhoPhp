@@ -5,16 +5,34 @@ require_once 'Crud.php';
 class Pedido extends Crud {
 
 	protected $table = 'estagio';
-	private $codigo;
-	private $nome;
-	private $endereco;
-	private $bairro;
-	private $total;
-	private $pagamento;
-	private $troco;
 
-	public function setNome($nome) {
-		$this->nome = $nome;
+	private $alu_id;
+	private $alu_nome;
+	private $alu_ra;
+	private $alu_celular;
+	private $alu_email;
+	private $alu_anoturma;
+	private $alu_trabalha;
+	private $alu_empresa;
+	private $alu_dt_trabalha;
+	private $alu_carteira;
+	private $alu_dt_carteira;
+	private $alu_declaracao_empresa;
+	private $alu_dt_declaracao_empresa;
+	private $alu_convenio;
+	private $alu_dt_convenio;
+	private $alu_compromisso;
+	private $alu_dt_compromisso;
+	private $alu_relatorio;
+	private $alu_dt_relatorio;
+	private $alu_declaracao_fib_impressa;
+	private $alu_declaracao_fib_data;
+	private $alu_pendencia;
+
+	
+
+	public function setAlu_Nome($alu_nome) {
+		$this->alu_nome = $alu_nome;
 
 	}
 
