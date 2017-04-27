@@ -7,7 +7,7 @@ function __autoload($classe) {
 
 $alu_nome                    = 'Joao';
 $alu_ra                      = '9652';
-$alu_celular                 = '';
+/*$alu_celular                 = '';
 $alu_email                   = '';
 $alu_anoturma                = '';
 $alu_trabalha                = '';
@@ -25,7 +25,7 @@ $alu_relatorio               = '';
 $alu_dt_relatorio            = '';
 $alu_declaracao_fib_impressa = '';
 $alu_declaracao_fib_data     = '';
-$alu_pendencia               = '';
+$alu_pendencia               = '';*/
 $estagio                     = new Estagio();
 $estagio->setAlu_Nome($alu_nome);
 $estagio->setAlu_Ra($alu_ra);
