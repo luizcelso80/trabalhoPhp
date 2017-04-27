@@ -2,7 +2,7 @@
 
 require_once 'Crud.php';
 
-class Pedido extends Crud {
+class Estagio extends Crud {
 
 	protected $table = 'estagio';
 
@@ -81,7 +81,7 @@ class Pedido extends Crud {
 		$this->alu_dt_declaracao_empresa = $alu_dt_declaracao_empresa;
 	}
 
-	public function setAlu_Trabalha($alu_convenio) {
+	public function setAlu_Convenio($alu_convenio) {
 		$this->alu_convenio = $alu_convenio;
 	}
 
