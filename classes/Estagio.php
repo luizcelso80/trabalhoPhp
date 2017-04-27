@@ -36,48 +36,202 @@ class Pedido extends Crud {
 
 	}
 
-	public function setEndereco($endereco) {
-		$this->endereco = $endereco;
+	public function setAlu_Ra($alu_ra) {
+		$this->alu_ra = $alu_ra;
 	}
 
-	public function setBairro($bairro) {
-		$this->bairro = $bairro;
+	public function setAlu_Celular($alu_celular) {
+		$this->alu_celular = $alu_celular;
 	}
 
-	public function setTotal($total) {
-		$this->total = $total;
+	public function setAlu_Email($alu_email) {
+		$this->alu_email = $alu_email;
 	}
 
-	public function setPagamento($pagamento) {
-		$this->pagamento = $pagamento;
+	public function setAlu_AnoTurma($alu_anoturma) {
+		$this->alu_anoturma = $alu_anoturma;
 	}
 
-	public function setTroco($troco) {
-		$this->troco = $troco;
+	public function setAlu_Trabalha($alu_trabalha) {
+		$this->alu_trabalha = $alu_trabalha;
+	}
+
+	//novos campos
+	public function setAlu_Empresa($alu_empresa) {
+		$this->alu_empresa = $alu_empresa;
+	}
+
+	public function setAlu_Dt_Trabalha($alu_dt_trabalha) {
+		$this->alu_dt_trabalha = $alu_dt_trabalha;
+	}
+
+	public function setAlu_Carteira($alu_carteira) {
+		$this->alu_carteira = $alu_carteira;
+	}
+
+	public function setAlu_Dt_Carteira($alu_dt_carteira) {
+		$this->alu_dt_carteira = $alu_dt_carteira;
+	}
+
+	public function setAlu_Declaracao_Empresa($alu_declaracao_empresa) {
+		$this->alu_declaracao_empresa = $alu_declaracao_empresa;
+	}
+
+	public function setAlu_Dt_Declaracao_Empresa($alu_dt_declaracao_empresa) {
+		$this->alu_dt_declaracao_empresa = $alu_dt_declaracao_empresa;
+	}
+
+	public function setAlu_Trabalha($alu_convenio) {
+		$this->alu_convenio = $alu_convenio;
+	}
+
+	public function setAlu_Dt_Convenio($alu_dt_convenio) {
+		$this->alu_dt_convenio = $alu_dt_convenio;
+	}
+
+	public function setAlu_Compromisso($alu_compromisso) {
+		$this->alu_compromisso = $alu_compromisso;
+	}
+
+	public function setAlu_Dt_Compromisso($alu_dt_compromisso) {
+		$this->alu_dt_compromisso = $alu_dt_compromisso;
+	}
+
+	public function setAlu_Relatorio($alu_relatorio) {
+		$this->alu_relatorio = $alu_relatorio;
+	}
+
+	public function setAlu_Dt_relatorio($alu_dt_relatorio) {
+		$this->alu_dt_relatorio = $alu_dt_relatorio;
+	}
+
+	public function setAlu_Declaracao_Fib_Impressa($alu_declaracao_fib_impressa) {
+		$this->alu_declaracao_fib_impressa = $alu_declaracao_fib_impressa;
+	}
+
+	public function setAlu_Declaracao_Fib_Data($alu_declaracao_fib_data) {
+		$this->alu_declaracao_fib_data = $alu_declaracao_fib_data;
+	}
+
+	public function setAlu_Pendencia($alu_pendencia) {
+		$this->alu_pendencia = $alu_pendencia;
 	}
 
 	public function insert() {
-		$sql  = "INSERT INTO $this->table (nome, endereco, bairro, total, pagamento, troco) VALUES (:nome, :endereco, :bairro, :total, :pagamento, :troco)";
+		$sql  = "INSERT INTO $this->table (
+											alu_nome,
+											alu_ra,
+											alu_celular,
+											alu_email,
+											alu_anoturma,
+											alu_trabalha,
+											alu_empresa,
+											alu_dt_trabalha,
+											alu_carteira,
+											alu_dt_carteira,
+											alu_declaracao_empresa,
+											alu_dt_declaracao_empresa,
+											alu_convenio,
+											alu_dt_convenio,
+											alu_compromisso,
+											alu_dt_compromisso,
+											alu_relatorio,
+											alu_dt_relatorio,
+											alu_declaracao_fib_impressa,
+											alu_declaracao_fib_data,
+											alu_pendencia) VALUES (
+																	:alu_nome,
+																	:alu_ra,
+																	:alu_celular,
+																	:alu_email,
+																	:alu_anoturma,
+																	:alu_trabalha,
+																	:alu_empresa,
+																	:alu_dt_trabalha,
+																	:alu_carteira,
+																	:alu_dt_carteira,
+																	:alu_declaracao_empresa,
+																	:alu_dt_declaracao_empresa,
+																	:alu_convenio,
+																	:alu_dt_convenio,
+																	:alu_compromisso,
+																	:alu_dt_compromisso,
+																	:alu_relatorio,
+																	:alu_dt_relatorio,
+																	:alu_declaracao_fib_impressa,
+																	:alu_declaracao_fib_data,
+																	:alu_pendencia)";
 		$stmt = DB::prepare($sql);
-		$stmt->bindParam(':nome', $this->nome);
-		$stmt->bindParam(':endereco', $this->endereco);
-		$stmt->bindParam(':bairro', $this->bairro);
-		$stmt->bindParam(':total', $this->total);
-		$stmt->bindParam(':pagamento', $this->pagamento);
-		$stmt->bindParam(':troco', $this->troco);
+		$stmt->bindParam(':alu_nome', $this->alu_nome);
+		$stmt->bindParam(':alu_ra', $this->alu_ra);
+		$stmt->bindParam(':alu_celular', $this->alu_celular);
+		$stmt->bindParam(':alu_email', $this->alu_email);
+		$stmt->bindParam(':alu_anoturma', $this->alu_anoturma);
+		$stmt->bindParam(':alu_trabalha', $this->alu_trabalha);
+		$stmt->bindParam(':alu_empresa', $this->alu_empresa);
+		$stmt->bindParam(':alu_dt_trabalha', $this->alu_dt_trabalha);
+		$stmt->bindParam(':alu_carteira', $this->alu_carteira);
+		$stmt->bindParam(':alu_dt_carteira', $this->alu_dt_carteira);
+		$stmt->bindParam(':alu_declaracao_empresa', $this->alu_declaracao_empresa);
+		$stmt->bindParam(':alu_dt_declaracao_empresa', $this->alu_dt_declaracao_empresa);
+		$stmt->bindParam(':alu_convenio', $this->alu_convenio);
+		$stmt->bindParam(':alu_dt_convenio', $this->alu_dt_convenio);
+		$stmt->bindParam(':alu_compromisso', $this->alu_compromisso);
+		$stmt->bindParam(':alu_dt_compromisso', $this->alu_dt_compromisso);
+		$stmt->bindParam(':alu_relatorio', $this->alu_relatorio);
+		$stmt->bindParam(':alu_dt_relatorio', $this->alu_dt_relatorio);
+		$stmt->bindParam(':alu_declaracao_fib_impressa', $this->alu_declaracao_fib_impressa);
+		$stmt->bindParam(':alu_declaracao_fib_data', $this->alu_declaracao_fib_data);
+		$stmt->bindParam(':alu_pendencia', $this->alu_pendencia);
+
 		return $stmt->execute();
 	}
 
-	public function update($codigo) {
-		$sql  = "UPDATE $this->table SET nome = :nome, endereco = :endereco, bairro = :bairro, total = :total, pagamento = :pagamento, troco = :troco WHERE codigo = :codigo";
+	public function update($alu_id) {
+		$sql  = "UPDATE $this->table SET	alu_nome = :alu_nome,
+											alu_ra = :alu_ra, 
+											alu_celular = :alu_celular, 
+											alu_email = :alu_email, 
+											alu_anoturma = :alu_anoturma, 
+											alu_trabalha = :alu_trabalha,
+											alu_empresa = :alu_empresa,
+											alu_dt_trabalha = :alu_dt_trabalha,
+											alu_carteira = :alu_carteira,
+											alu_dt_carteira = :alu_dt_carteira,
+											alu_declaracao_empresa = :alu_declaracao_empresa,
+											alu_dt_declaracao_empresa = :alu_dt_declaracao_empresa,
+											alu_convenio = :alu_convenio,
+											alu_dt_convenio = :alu_dt_convenio,
+											alu_compromisso = :alu_compromisso,
+											alu_dt_compromisso = :alu_dt_compromisso,
+											alu_relatorio = :alu_relatorio,
+											alu_dt_relatorio = :alu_dt_relatorio,
+											alu_declaracao_fib_impressa = :alu_declaracao_fib_impressa,
+											alu_declaracao_fib_data = :alu_declaracao_fib_data,
+											alu_pendencia = :alu_pendencia WHERE alu_id = :alu_id";
 		$stmt = DB::prepare($sql);
-		$stmt->bindParam(':nome', $this->nome);
-		$stmt->bindParam(':endereco', $this->endereco);
-		$stmt->bindParam(':bairro', $this->bairro);
-		$stmt->bindParam(':total', $this->total);
-		$stmt->bindParam(':pagamento', $this->pagamento);
-		$stmt->bindParam(':troco', $this->troco);
-		$stmt->bindParam(':codigo', $codigo);
+		$stmt->bindParam(':alu_nome', $this->alu_nome);
+		$stmt->bindParam(':alu_ra', $this->alu_ra);
+		$stmt->bindParam(':alu_celular', $this->alu_celular);
+		$stmt->bindParam(':alu_email', $this->alu_email);
+		$stmt->bindParam(':alu_anoturma', $this->alu_anoturma);
+		$stmt->bindParam(':alu_trabalha', $this->alu_trabalha);
+		$stmt->bindParam(':alu_empresa', $this->alu_empresa);
+		$stmt->bindParam(':alu_dt_trabalha', $this->alu_dt_trabalha);
+		$stmt->bindParam(':alu_carteira', $this->alu_carteira);
+		$stmt->bindParam(':alu_dt_carteira', $this->alu_dt_carteira);
+		$stmt->bindParam(':alu_declaracao_empresa', $this->alu_declaracao_empresa);
+		$stmt->bindParam(':alu_dt_declaracao_empresa', $this->alu_dt_declaracao_empresa);
+		$stmt->bindParam(':alu_convenio', $this->alu_convenio);
+		$stmt->bindParam(':alu_dt_convenio', $this->alu_dt_convenio);
+		$stmt->bindParam(':alu_compromisso', $this->alu_compromisso);
+		$stmt->bindParam(':alu_dt_compromisso', $this->alu_dt_compromisso);
+		$stmt->bindParam(':alu_relatorio', $this->alu_relatorio);
+		$stmt->bindParam(':alu_dt_relatorio', $this->alu_dt_relatorio);
+		$stmt->bindParam(':alu_declaracao_fib_impressa', $this->alu_declaracao_fib_impressa);
+		$stmt->bindParam(':alu_declaracao_fib_data', $this->alu_declaracao_fib_data);
+		$stmt->bindParam(':alu_pendencia', $this->alu_pendencia);
+		$stmt->bindParam(':alu_id', $alu_id);
 		return $stmt->execute();
 	}
 
