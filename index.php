@@ -1,13 +1,13 @@
 <?php
-function __autoload($porraloca) {
+function __autoload($classe) {
 
-	require_once 'classes/'.$porraloca.'.php';
+	require_once 'classes/'.$classe.'.php';
 
 }
 
-$alu_nome                    = 'Luiz';
-$alu_ra                      = '878';
-$alu_celular                 = '';
+$alu_nome                    = 'Joao';
+$alu_ra                      = '9652';
+/*$alu_celular                 = '';
 $alu_email                   = '';
 $alu_anoturma                = '';
 $alu_trabalha                = '';
@@ -25,11 +25,11 @@ $alu_relatorio               = '';
 $alu_dt_relatorio            = '';
 $alu_declaracao_fib_impressa = '';
 $alu_declaracao_fib_data     = '';
-$alu_pendencia               = '';
+$alu_pendencia               = '';*/
 $estagio                     = new Estagio();
 $estagio->setAlu_Nome($alu_nome);
 $estagio->setAlu_Ra($alu_ra);
-$estagio->setAlu_Celular($alu_celular);
+/*$estagio->setAlu_Celular($alu_celular);
 $estagio->setAlu_Email($alu_email);
 $estagio->setAlu_AnoTurma($alu_anoturma);
 $estagio->setAlu_Trabalha($alu_trabalha);
@@ -47,7 +47,7 @@ $estagio->setAlu_Relatorio($alu_relatorio);
 $estagio->setAlu_Dt_relatorio($alu_dt_relatorio);
 $estagio->setAlu_Declaracao_Fib_Impressa($alu_declaracao_fib_impressa);
 $estagio->setAlu_Declaracao_Fib_Data($alu_declaracao_fib_data);
-$estagio->setAlu_Pendencia($alu_pendencia);
+$estagio->setAlu_Pendencia($alu_pendencia);*/
 
 $estagio->insert();
 ?>

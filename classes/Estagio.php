@@ -2,7 +2,7 @@
 
 require_once 'Crud.php';
 
-class Pedido extends Crud {
+class Estagio extends Crud {
 
 	protected $table = 'estagio';
 
