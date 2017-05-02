@@ -52,7 +52,7 @@
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro <span class="caret"></span></a>
                   <ul class="dropdown-menu">
                     <li><a href="incluir.php">Incluir</a></li>
-                    <li><a href="teste.php">Alterar</a></li>
+                    <li><a href="dbIncluir.php">Alterar</a></li>
                   </ul>
                 </li>
                 <li class="dropdown">
