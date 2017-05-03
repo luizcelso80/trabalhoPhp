@@ -5,7 +5,7 @@
     </div>
     <div class="form-group">
         <label for="alu_nome">Nome</label>
-        <input type="password" class="form-control" id="alu_nome" placeholder="Senha">
+        <input type="text" class="form-control" id="alu_nome" placeholder="Nome do aluno">
     </div>
     <div class="form-group">
         <label for="alu_ra">RA</label>
