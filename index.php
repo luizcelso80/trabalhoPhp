@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Pendencia</title>
+    <title>Controle de Estagio</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -51,7 +51,12 @@
                   <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro <span class="caret"></span></a>
                   <ul class="dropdown-menu">
+<<<<<<< HEAD
                     <li><a href="incluir.php">Aluno</a></li>
+=======
+                    <li><a href="incluir.php">Incluir</a></li>
+                    <li><a href="consulta.php">Alterar</a></li>
+>>>>>>> upstream/master
                   </ul>
                 </li>
                 <li class="dropdown">
