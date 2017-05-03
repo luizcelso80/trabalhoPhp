@@ -25,7 +25,7 @@ alu_pendencia char(1), default 'N'
 
 -> Quando alu_trabalha for igual a 'S', o campo alu_pendencia passará
 para 'S' somente quando os campos: alu_carteira,
-alu_declaracao_empresa e alu_relatorio estiverem com o conteúdo 'S'.
+alu_declaracao_empresa e alu_relatorio estiverem com o conteúdo 'N'.
 
 -> Quando alu_trabalha for igual a 'N', o campo alu_pendencia passará
 para 'S' somente quando os campos: alu_convenio, alu_compromisso
