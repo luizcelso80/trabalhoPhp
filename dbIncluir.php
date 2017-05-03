@@ -3,7 +3,7 @@ function __autoload($classe) {
 	require_once 'classes/'.$classe.'.php';
 }
 
-$alu_nome                    = isset($REQUEST['alu_nome']) ? $REQUEST['alu_nome']: 'jhgvjyhvjh';
+$alu_nome                    = isset($REQUEST['alu_nome']) ? $REQUEST['alu_nome']: NULL;
 $alu_ra                      = isset($REQUEST['alu_ra']) ? $REQUEST['alu_ra']: NULL;
 $alu_celular                 = isset($REQUEST['alu_celular']) ? $REQUEST['alu_celular']: NULL;
 $alu_email                   = isset($REQUEST['alu_email']) ? $REQUEST['alu_email']: NULL;
