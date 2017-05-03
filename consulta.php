@@ -2,11 +2,17 @@
 function __autoload($classe) {
 	require_once 'classes/'.$classe.'.php';
 }
-
 $lista = new Estagio();
+if(isset($_POST['excluir'])){
+  $id = $_POST['excluir'];
+
+  $lista->delete($id);
+}
+
+
 $lista->findAll();
 ?>
-<div class="col-md-5 col-md-offset-3">
+<div id="listar" class="col-md-5 col-md-offset-3">
 	<table class="table table-striped table-responsive table-condensed">
 		<thead>
 			<th>Id</th>
@@ -23,12 +29,12 @@ $lista->findAll();
 				<td><?php echo $value->alu_ra; ?></td>
 				<td><?php echo $value->alu_email; ?></td>
 				<td>
-					<button type="button" class="btn btn-warning btn-xs">
+					<a type="button" class="btn btn-warning btn-xs" >
 					    <span class="glyphicon glyphicon-pencil"></span>
-					</button>
+					</a>
 				</td>
 				<td>
-					<button type="button" class="btn btn-danger btn-xs">
+					<button type="submit" class="btn btn-danger btn-xs" data-target="#listar" data-whatever="<?php echo $value->alu_id; ?>">
 					    <span class="glyphicon glyphicon-trash"></span>
 					</button>
 				</td>
