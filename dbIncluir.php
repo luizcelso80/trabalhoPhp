@@ -25,6 +25,7 @@ $alu_declaracao_fib_impressa = isset($_REQUEST['alu_declaracao_fib_impressa']) ?
 $alu_declaracao_fib_data     = isset($_REQUEST['alu_declaracao_fib_data']) ? $_REQUEST['alu_declaracao_fib_data']: NULL;
 $alu_pendencia               = isset($_REQUEST['alu_pendencia']) ? $_REQUEST['alu_pendencia']: NULL;
 
+
 $novoAluno = new Estagio();
 
 $novoAluno->setAlu_Nome($alu_nome);
