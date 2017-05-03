@@ -43,7 +43,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#">Controle de Estagio</a>
+          <a class="navbar-brand" href="#">Controle de Estágio</a>
         </div><!-- Fim Menu para navegacao mobile -->
 
         <div class="collapse navbar-collapse" id="bs1">
@@ -51,15 +51,19 @@
                   <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro <span class="caret"></span></a>
                   <ul class="dropdown-menu">
+<<<<<<< HEAD
+                    <li><a href="incluir.php">Aluno</a></li>
+=======
                     <li><a href="incluir.php">Incluir</a></li>
                     <li><a href="consulta.php">Alterar</a></li>
+>>>>>>> upstream/master
                   </ul>
                 </li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatorios <span class="caret"></span></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatórios <span class="caret"></span></a>
                   <ul class="dropdown-menu">
-                    <li><a href="pendencia.php">Declaracao Fib</a></li>
-                    <li><a href="teste.php">Pendencia</a></li>
+                    <li><a href="pendencia.php">Declaração Fib</a></li>
+                    <li><a href="teste.php">Pendência</a></li>
                   </ul>
                 </li>
               </ul>
