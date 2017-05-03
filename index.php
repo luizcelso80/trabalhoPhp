@@ -24,11 +24,9 @@
             $("#btn").click(function(e) {
                 alert("clicou");
             });
-            $("#bs1 a:not('.dropdown-toggle')").click(function(e) {
-                e.preventDefault();
-                var href = $(this).attr('href');
-                //$("#content").show();
-                $("#content").load(href);
+            $("#content>.btn-danger").click(function(e){
+                //e.preventDefault();
+                alert("deletou");
             });
         });
 
