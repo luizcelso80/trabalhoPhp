@@ -24,7 +24,7 @@
             $("#btn").click(function(e) {
                 alert("clicou");
             });
-            $("#content>.btn-danger").click(function(e){
+            $("#content>.btn-danger").click(function(e) {
                 //e.preventDefault();
                 alert("deletou");
             });
@@ -72,7 +72,7 @@
     </nav>
     <!--Fim da navbar-->
     <div class="container-fluid" id="content">
-        <form action="dbIncluir.php" method="post">
+        <form action="dbIncluir.php" method="post" name="formIncluir">
             <div class="form-group">
                 <!--<label for="alu_id">ID</label>-->
 
@@ -100,30 +100,52 @@
             </div>
             <div class="form-group">
                 <label for="alu_trabalha">Trabalha?</label><br/>
-                <label class="radio-inline"><input name="alu_trabalha" id="alu_trabalha" value="s" type="radio">Sim</label>
-                <label class="radio-inline"><input name="alu_trabalha" id="alu_trabalha" value="n" checked="" type="radio">Não</label>
+                <label class="radio-inline">
+            <input name="alu_trabalha" id="alu_trabalha" value="s" type="radio" onclick="ativa('s', 'informacoesTrabalho')">
+            Sim
+        </label>
+                <label class="radio-inline">
+            <input name="alu_trabalha" id="alu_trabalha" value="n" checked="" type="radio" onclick="ativa('n', 'informacoesTrabalho')">
+            Não
+        </label>
+                <script type="text/javascript">
+                    function ativa(val, id) {
+                        if (val == "s") {
+                            document.getElementById(id).style.display = 'block';
+                            document.formIncluir.alu_pendencia_sim.checked = true;
+                            document.formIncluir.alu_pendencia_nao.checked = false;
+                        } else {
+                            document.getElementById(id).style.display = 'none';
+                            document.formIncluir.alu_pendencia_nao.checked = true;
+                            document.formIncluir.alu_pendencia_sim.checked = false;
+                        }
+                    }
+
+                </script>
             </div>
-            <div class="form-group">
-                <label for="alu_empresa">Empresa</label>
-                <input type="text" name="alu_empresa" class="form-control" id="alu_empresa" placeholder="Nome da empresa">
-            </div>
-            <div class="form-group">
-                <label for="alu_dt_trabalha">Ano de início no trabalho atual</label>
-                <input type="date" name="alu_dt_trabalha" class="form-control" id="alu_dt_trabalha">
-            </div>
-            <div class="form-group">
-                <label for="alu_carteira">Copia carteira de trabalho</label><br/>
-                <label class="radio-inline"><input name="alu_carteira" id="alu_carteira" value="s" type="radio">Entregue</label>
-                <label class="radio-inline"><input name="alu_carteira" id="alu_carteira" value="n" checked="" type="radio">Não entregue</label>
-            </div>
-            <div class="form-group">
-                <label for="alu_declaracao_empresa">Declaração da empresa</label><br/>
-                <label class="radio-inline"><input name="alu_declaracao_empresa" id="alu_declaracao_empresa" value="s" type="radio">Entregue</label>
-                <label class="radio-inline"><input name="alu_declaracao_empresa" id="alu_declaracao_empresa" value="n" checked="" type="radio">Não entregue</label>
-            </div>
-            <div class="form-group">
-                <label for="alu_dt_declaracao_empresa">Data da declaração da empresa</label>
-                <input type="date" name="alu_dt_declaracao_empresa" class="form-control" id="alu_dt_declaracao_empresa">
+            <div id="informacoesTrabalho" style="display: none;">
+                <div class="form-group">
+                    <label for="alu_empresa">Empresa</label>
+                    <input type="text" name="alu_empresa" class="form-control" id="alu_empresa" placeholder="Nome da empresa">
+                </div>
+                <div class="form-group">
+                    <label for="alu_dt_trabalha">Ano de início no trabalho atual</label>
+                    <input type="date" name="alu_dt_trabalha" class="form-control" id="alu_dt_trabalha">
+                </div>
+                <div class="form-group">
+                    <label for="alu_carteira">Copia carteira de trabalho</label><br/>
+                    <label class="radio-inline"><input name="alu_carteira" id="alu_carteira" value="s" type="radio">Entregue</label>
+                    <label class="radio-inline"><input name="alu_carteira" id="alu_carteira" value="n" checked="" type="radio">Não entregue</label>
+                </div>
+                <div class="form-group">
+                    <label for="alu_declaracao_empresa">Declaração da empresa</label><br/>
+                    <label class="radio-inline"><input name="alu_declaracao_empresa" id="alu_declaracao_empresa" value="s" type="radio">Entregue</label>
+                    <label class="radio-inline"><input name="alu_declaracao_empresa" id="alu_declaracao_empresa" value="n" checked="" type="radio">Não entregue</label>
+                </div>
+                <div class="form-group">
+                    <label for="alu_dt_declaracao_empresa">Data da declaração da empresa</label>
+                    <input type="date" name="alu_dt_declaracao_empresa" class="form-control" id="alu_dt_declaracao_empresa">
+                </div>
             </div>
             <div class="form-group">
                 <label for="alu_convenio">Possui convênio</label><br/>
@@ -162,9 +184,9 @@
                 <input type="date" name="alu_declaracao_fib_data" class="form-control" id="alu_declaracao_fib_data">
             </div>
             <div class="form-group">
-                <label for="alu_pendencia">Relatório</label><br/>
-                <label class="radio-inline"><input name="alu_pendencia" id="alu_pendencia" value="s" checked="" type="radio">Sim</label>
-                <label class="radio-inline"><input name="alu_pendencia" id="alu_pendencia" value="n" type="radio">Não</label>
+                <label for="alu_pendencia">Pendência</label><br/>
+                <label class="radio-inline"><input name="alu_pendencia_sim" id="alu_pendencia" value="s" type="radio">Sim</label>
+                <label class="radio-inline"><input name="alu_pendencia_nao" id="alu_pendencia" value="n" type="radio">Não</label>
             </div>
             <!--<div class="checkbox">
                 <label>
@@ -183,5 +205,3 @@
 </body>
 
 </html>
-
-
