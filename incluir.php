@@ -1,19 +1,12 @@
 <form action="dbIncluir.php" method="post">
     <div class="form-group">
         <!--<label for="alu_id">ID</label>-->
-<<<<<<< HEAD
-        <input type="hidden" nome="alu_id" class="form-control" id="alu_id" readonly="readonly">
-    </div>
-    <div class="form-group">
-        <label for="alu_nome">Nome</label>
-        <input type="text" nome="alu_nome" class="form-control" id="alu_nome" placeholder="Nome do aluno">
-=======
+
         <input type="hidden" class="form-control" id="alu_id" name="alu_id" readonly="readonly">
     </div>
     <div class="form-group">
         <label for="alu_nome">Nome</label>
-        <input type="text" class="form-control" id="alu_nome" name="alu_nome" placeholder="Senha">
->>>>>>> upstream/master
+        <input type="text" class="form-control" id="alu_nome" name="alu_nome" placeholder="Nome do aluno">
     </div>
     <div class="form-group">
         <label for="alu_ra">RA</label>
@@ -29,7 +22,7 @@
     </div>
     <div class="form-group">
         <label for="alu_anoturma">Ano de início da turma</label>
-        <input type="text" nome="alu_anoturma" class="form-control" id="alu_anoturma" placeholder="2015">
+        <input type="date" nome="alu_anoturma" class="form-control" id="alu_anoturma">
     </div>
     <div class="form-group">
         <label for="alu_trabalha">Trabalha?</label><br/>
