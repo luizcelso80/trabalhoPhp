@@ -1,11 +1,19 @@
 <form action="dbIncluir.php" method="post">
     <div class="form-group">
         <!--<label for="alu_id">ID</label>-->
+<<<<<<< HEAD
         <input type="hidden" nome="alu_id" class="form-control" id="alu_id" readonly="readonly">
     </div>
     <div class="form-group">
         <label for="alu_nome">Nome</label>
         <input type="text" nome="alu_nome" class="form-control" id="alu_nome" placeholder="Nome do aluno">
+=======
+        <input type="hidden" class="form-control" id="alu_id" name="alu_id" readonly="readonly">
+    </div>
+    <div class="form-group">
+        <label for="alu_nome">Nome</label>
+        <input type="text" class="form-control" id="alu_nome" name="alu_nome" placeholder="Senha">
+>>>>>>> upstream/master
     </div>
     <div class="form-group">
         <label for="alu_ra">RA</label>
@@ -97,4 +105,5 @@
         </label>
     </div>-->
     <input type="submit" class="btn btn-default" value="Cadastrar">
+
 </form>

@@ -3,27 +3,28 @@ function __autoload($classe) {
 	require_once 'classes/'.$classe.'.php';
 }
 
-$alu_nome                    = isset($REQUEST['alu_nome']) ? $REQUEST['alu_nome']: NULL;
-$alu_ra                      = isset($REQUEST['alu_ra']) ? $REQUEST['alu_ra']: NULL;
-$alu_celular                 = isset($REQUEST['alu_celular']) ? $REQUEST['alu_celular']: NULL;
-$alu_email                   = isset($REQUEST['alu_email']) ? $REQUEST['alu_email']: NULL;
-$alu_anoturma                = isset($REQUEST['alu_anoturma']) ? $REQUEST['alu_anoturma']: NULL;
-$alu_trabalha                = isset($REQUEST['alu_trabalha']) ? $REQUEST['alu_trabalha']: NULL;
-$alu_empresa                 = isset($REQUEST['alu_empresa']) ? $REQUEST['alu_empresa']: NULL;
-$alu_dt_trabalha             = isset($REQUEST['alu_dt_trabalha']) ? $REQUEST['alu_dt_trabalha']: NULL;
-$alu_carteira                = isset($REQUEST['alu_carteira']) ? $REQUEST['alu_carteira']: NULL;
-$alu_dt_carteira             = isset($REQUEST['alu_dt_carteira']) ? $REQUEST['alu_dt_carteira']: NULL;
-$alu_declaracao_empresa      = isset($REQUEST['alu_declaracao']) ? $REQUEST['alu_declaracao']: NULL;
-$alu_dt_declaracao_empresa   = isset($REQUEST['alu_declaracao_empresa']) ? $REQUEST['alu_declaracao_empresa']: NULL;
-$alu_convenio                = isset($REQUEST['alu_convenio']) ? $REQUEST['alu_convenio']: NULL;
-$alu_dt_convenio             = isset($REQUEST['alu_dt_convenio']) ? $REQUEST['alu_dt_convenio']: NULL;
-$alu_compromisso             = isset($REQUEST['alu_compromisso']) ? $REQUEST['alu_compromisso']: NULL;
-$alu_dt_compromisso          = isset($REQUEST['alu_dt_compromisso']) ? $REQUEST['alu_dt_compromisso']: NULL;
-$alu_relatorio               = isset($REQUEST['alu_relatorio']) ? $REQUEST['alu_relatorio']: NULL;
-$alu_dt_relatorio            = isset($REQUEST['alu_dt_relatorio']) ? $REQUEST['alu_dt_relatorio']: NULL;
-$alu_declaracao_fib_impressa = isset($REQUEST['alu_declaracao_fib_impressa']) ? $REQUEST['alu_declaracao_fib_impressa']: NULL;
-$alu_declaracao_fib_data     = isset($REQUEST['alu_declaracao_fib_data']) ? $REQUEST['alu_declaracao_fib_data']: NULL;
-$alu_pendencia               = isset($REQUEST['alu_pendencia']) ? $REQUEST['alu_pendencia']: NULL;
+$alu_nome                    = isset($_REQUEST['alu_nome']) ? $_REQUEST['alu_nome']: NULL;
+$alu_ra                      = isset($_REQUEST['alu_ra']) ? $_REQUEST['alu_ra']: NULL;
+$alu_celular                 = isset($_REQUEST['alu_celular']) ? $_REQUEST['alu_celular']: NULL;
+$alu_email                   = isset($_REQUEST['alu_email']) ? $_REQUEST['alu_email']: NULL;
+$alu_anoturma                = isset($_REQUEST['alu_anoturma']) ? $_REQUEST['alu_anoturma']: NULL;
+$alu_trabalha                = isset($_REQUEST['alu_trabalha']) ? $_REQUEST['alu_trabalha']: NULL;
+$alu_empresa                 = isset($_REQUEST['alu_empresa']) ? $_REQUEST['alu_empresa']: NULL;
+$alu_dt_trabalha             = isset($_REQUEST['alu_dt_trabalha']) ? $_REQUEST['alu_dt_trabalha']: NULL;
+$alu_carteira                = isset($_REQUEST['alu_carteira']) ? $_REQUEST['alu_carteira']: NULL;
+$alu_dt_carteira             = isset($_REQUEST['alu_dt_carteira']) ? $_REQUEST['alu_dt_carteira']: NULL;
+$alu_declaracao_empresa      = isset($_REQUEST['alu_declaracao']) ? $_REQUEST['alu_declaracao']: NULL;
+$alu_dt_declaracao_empresa   = isset($_REQUEST['alu_declaracao_empresa']) ? $_REQUEST['alu_declaracao_empresa']: NULL;
+$alu_convenio                = isset($_REQUEST['alu_convenio']) ? $_REQUEST['alu_convenio']: NULL;
+$alu_dt_convenio             = isset($_REQUEST['alu_dt_convenio']) ? $_REQUEST['alu_dt_convenio']: NULL;
+$alu_compromisso             = isset($_REQUEST['alu_compromisso']) ? $_REQUEST['alu_compromisso']: NULL;
+$alu_dt_compromisso          = isset($_REQUEST['alu_dt_compromisso']) ? $_REQUEST['alu_dt_compromisso']: NULL;
+$alu_relatorio               = isset($_REQUEST['alu_relatorio']) ? $_REQUEST['alu_relatorio']: NULL;
+$alu_dt_relatorio            = isset($_REQUEST['alu_dt_relatorio']) ? $_REQUEST['alu_dt_relatorio']: NULL;
+$alu_declaracao_fib_impressa = isset($_REQUEST['alu_declaracao_fib_impressa']) ? $_REQUEST['alu_declaracao_fib_impressa']: NULL;
+$alu_declaracao_fib_data     = isset($_REQUEST['alu_declaracao_fib_data']) ? $_REQUEST['alu_declaracao_fib_data']: NULL;
+$alu_pendencia               = isset($_REQUEST['alu_pendencia']) ? $_REQUEST['alu_pendencia']: NULL;
+
 
 $novoAluno = new Estagio();
 
