@@ -5,7 +5,7 @@
     </div>
     <div class="form-group">
         <label for="alu_nome">Nome</label>
-        <input type="password" class="form-control" id="alu_nome" placeholder="Senha">
+        <input type="text" class="form-control" id="alu_nome" placeholder="Senha">
     </div>
     <div class="form-group">
         <label for="alu_ra">RA</label>
@@ -96,5 +96,5 @@
             <input type="checkbox"> Check me out
         </label>
     </div>-->
-    <button type="submit" class="btn btn-default">Cadastrar</button>
+    <input type="submit" class="btn btn-default">Cadastrar</input>
 </form>
