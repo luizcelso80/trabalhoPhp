@@ -84,19 +84,19 @@
             </div>
             <div class="form-group">
                 <label for="alu_ra">RA</label>
-                <input type="text" nome="alu_ra" class="form-control" id="alu_ra" placeholder="Registro do Aluno">
+                <input type="text" name="alu_ra" class="form-control" id="alu_ra" placeholder="Registro do Aluno">
             </div>
             <div class="form-group">
                 <label for="alu_celular">Celular</label>
-                <input type="text" nome="alu_celular" class="form-control" id="alu_celular" placeholder="014 9 9999 9999">
+                <input type="text" name="alu_celular" class="form-control" id="alu_celular" placeholder="014 9 9999 9999">
             </div>
             <div class="form-group">
                 <label for="alu_email">E-mail</label>
-                <input type="text" nome="alu_email" class="form-control" id="alu_email" placeholder="aluno@email.com">
+                <input type="text" name="alu_email" class="form-control" id="alu_email" placeholder="aluno@email.com">
             </div>
             <div class="form-group">
                 <label for="alu_anoturma">Ano de início da turma</label>
-                <input type="date" nome="alu_anoturma" class="form-control" id="alu_anoturma">
+                <input type="date" name="alu_anoturma" class="form-control" id="alu_anoturma">
             </div>
             <div class="form-group">
                 <label for="alu_trabalha">Trabalha?</label><br/>
