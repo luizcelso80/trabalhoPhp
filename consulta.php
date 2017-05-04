@@ -5,7 +5,10 @@ function __autoload($classe) {
 
 $lista = new Estagio();
 
-
+if(isset($_GET['excluir'])){
+	$id = $_GET['excluir'];
+	$lista->delete($id);
+}
 
 
 
@@ -34,12 +37,9 @@ $lista->findAll();
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
         $(document).ready(function() {
+        	document.getElementById("btn")
             $("#btn").click(function(e) {
                 alert("clicou");
-            });
-            $(".btn-danger").click(function(e){
-                //e.preventDefault();
-                alert("deletou");
             });
         });
 
@@ -107,9 +107,9 @@ $lista->findAll();
     						</a>
     					</td>
     					<td>
-    						<button type="submit" class="btn btn-danger btn-xs">
+    						<a href="?excluir=<?php echo $value->alu_id; ?>" type="button" class="btn btn-danger btn-xs">
     						    <span class="glyphicon glyphicon-trash"></span>
-    						</button>
+    						</a>
     					</td>
     				</tr>
     				<?php } ?>
