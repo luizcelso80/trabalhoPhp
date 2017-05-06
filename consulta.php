@@ -90,7 +90,7 @@ $lista->findAll();
                      modal.find('#alu_declaracao_fib_impressa').val(alu_declaracao_fib_impressa)
                      modal.find('#alu_declaracao_fib_dataalu_pendencia').val(alu_declaracao_fib_dataalu_pendencia)
                      modal.find('#alu_pendencia').val(alu_pendencia)
-                     modal.find('.modal-title').text('Alterando Estagiario: ' + alu_id)
+                     modal.find('.modal-title').text('Alterando Estagiario: ' + alu_relatorio)
                     });
             $("#btn").click(function(e) {
                 alert("clicou");
