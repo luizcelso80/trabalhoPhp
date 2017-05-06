@@ -2,7 +2,7 @@
 function __autoload($classe) {
 	require_once 'classes/'.$classe.'.php';
 }
-
+$alu_id                      = isset($_REQUEST['alu_id']) ? $_REQUEST['alu_id'] : NULL;
 $alu_nome                    = isset($_REQUEST['alu_nome']) ? $_REQUEST['alu_nome']: NULL;
 $alu_ra                      = isset($_REQUEST['alu_ra']) ? $_REQUEST['alu_ra']: NULL;
 $alu_celular                 = isset($_REQUEST['alu_celular']) ? $_REQUEST['alu_celular']: NULL;
@@ -49,7 +49,13 @@ $novoAluno->setAlu_Dt_relatorio($alu_dt_relatorio);
 $novoAluno->setAlu_Declaracao_Fib_Impressa($alu_declaracao_fib_impressa);
 $novoAluno->setAlu_Declaracao_Fib_Data($alu_declaracao_fib_data);
 $novoAluno->setAlu_Pendencia($alu_pendencia);
-$novoAluno->insert();
+
+if($alu_id){
+    $novoAluno->update($alu_id);
+}else{
+    $novoAluno->insert();
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

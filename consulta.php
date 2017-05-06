@@ -48,7 +48,7 @@ $lista->findAll();
                      var modal = $(this)
                      
                      modal.find('.modal-body input[id=alu_nome]').val(recipient)
-                     modal.find('#ida').val(id)
+                     modal.find('#alu_id').val(id)
                      modal.find('#endereco').val(end)
                      modal.find('.modal-title').text('Alterando Estagiario: ' + id)
                     });
@@ -116,7 +116,7 @@ $lista->findAll();
     					<td><?php echo $value->alu_ra; ?></td>
     					<td><?php echo $value->alu_email; ?></td>
     					<td>
-    						<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAlterar" data-whatever="<?php echo $value->alu_nome; ?>" data-whateverid="<?php echo $value->alu_ra; ?>">
+    						<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAlterar" data-whatever="<?php echo $value->alu_nome; ?>" data-whateverid="<?php echo $value->alu_id; ?>">
     						    <span class="glyphicon glyphicon-pencil"></span>
     						</button>
     					</td>
