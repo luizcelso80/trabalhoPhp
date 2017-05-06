@@ -40,17 +40,57 @@ $lista->findAll();
         	$('#modalAlterar').on('show.bs.modal', function (event) {
                     
                     var button = $(event.relatedTarget) // Button that triggered the modal
-                    var recipient = button.data('whatever') // Extract info from data-* attributes
-                    var id = button.data('whateverid')
-                    var end = button.data('whateverendereco')
+                    var recipient = button.data('alu_nome') // Extract info from data-* attributes
+                    var alu_id = button.data('alu_id')
+                    var alu_ra = button.data('alu_ra')
+                    var alu_celular = button.data('alu_celular')
+                    var alu_email = button.data('alu_email')
+                    var alu_anoturma = button.data('alu_anoturma')
+                    var alu_trabalha = button.data('alu_trabalha')
+                    var alu_empresa = button.data('alu_empresa')
+                    var alu_dt_trabalha = button.data('alu_dt_trabalha')
+                    var alu_carteira = button.data('alu_carteira')
+                    var alu_dt_carteira = button.data('alu_dt_carteira')
+                    var alu_declaracao_empresa = button.data('alu_declaracao_empresa')
+                    var alu_dt_declaracao_empresa = button.data('alu_dt_declaracao_empresa')
+                    var alu_convenio = button.data('alu_convenio')
+                    var alu_dt_convenio = button.data('alu_dt_convenio')
+                    var alu_compromisso = button.data('alu_compromisso')
+                    var alu_dt_compromisso = button.data('alu_dt_compromisso')
+                    var alu_relatorio = button.data('alu_relatorio')
+                    var alu_dt_relatorio = button.data('alu_dt_relatorio')
+                    var alu_declaracao_fib_impressa = button.data('alu_declaracao_fib_impressa')
+                    var alu_declaracao_fib_dataalu_pendencia = button.data('alu_declaracao_fib_dataalu_pendencia')
+                    var alu_pendencia = button.data('alu_pendencia')
+
+
                      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
                      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
                      var modal = $(this)
                      
                      modal.find('.modal-body input[id=alu_nome]').val(recipient)
-                     modal.find('#alu_id').val(id)
-                     modal.find('#endereco').val(end)
-                     modal.find('.modal-title').text('Alterando Estagiario: ' + id)
+                     modal.find('#alu_id').val(alu_id)
+                     modal.find('#alu_ra').val(alu_ra)
+                     modal.find('#alu_celular').val(alu_celular)
+                     modal.find('#alu_email').val(alu_email)
+                     modal.find('#alu_anoturma').val(alu_anoturma)
+                     modal.find('#alu_trabalha').val(alu_trabalha)
+                     modal.find('#alu_empresa').val(alu_empresa)
+                     modal.find('#alu_dt_trabalha').val(alu_dt_trabalha)
+                     modal.find('#alu_carteira').val(alu_carteira)
+                     modal.find('#alu_dt_carteira').val(alu_dt_carteira)
+                     modal.find('#alu_declaracao_empresa').val(alu_declaracao_empresa)
+                     modal.find('#alu_dt_declaracao_empresa').val(alu_dt_declaracao_empresa)
+                     modal.find('#alu_convenio').val(alu_convenio)
+                     modal.find('#alu_dt_convenio').val(alu_dt_convenio)
+                     modal.find('#alu_compromisso').val(alu_compromisso)
+                     modal.find('#alu_dt_compromisso').val(alu_dt_compromisso)
+                     modal.find('#alu_relatorio').val(alu_relatorio)
+                     modal.find('#alu_dt_relatorio').val(alu_dt_relatorio)
+                     modal.find('#alu_declaracao_fib_impressa').val(alu_declaracao_fib_impressa)
+                     modal.find('#alu_declaracao_fib_dataalu_pendencia').val(alu_declaracao_fib_dataalu_pendencia)
+                     modal.find('#alu_pendencia').val(alu_pendencia)
+                     modal.find('.modal-title').text('Alterando Estagiario: ' + alu_id)
                     });
             $("#btn").click(function(e) {
                 alert("clicou");
@@ -116,7 +156,29 @@ $lista->findAll();
     					<td><?php echo $value->alu_ra; ?></td>
     					<td><?php echo $value->alu_email; ?></td>
     					<td>
-    						<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAlterar" data-whatever="<?php echo $value->alu_nome; ?>" data-whateverid="<?php echo $value->alu_id; ?>">
+    						<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAlterar" data-alu_id="<?php echo $value->alu_id; ?>"
+                            data-alu_nome="<?php echo $value->alu_nome; ?>"
+                            data-alu_ra="<?php echo $value->alu_ra; ?>"
+                            data-alu_celular="<?php echo $value->alu_celular; ?>"
+                            data-alu_email="<?php echo $value->alu_email; ?>"
+                            data-alu_anoturma="<?php echo $value->alu_anoturma; ?>"
+                            data-alu_trabalha="<?php echo $value->alu_trabalha; ?>"
+                            data-alu_empresa="<?php echo $value->alu_empresa; ?>"
+                            data-alu_dt_trabalha="<?php echo $value->alu_dt_trabalha; ?>"
+                            data-alu_carteira="<?php echo $value->alu_carteira; ?>"
+                            data-alu_dt_carteira="<?php echo $value->alu_dt_carteira; ?>"
+                            data-alu_declaracao_empresa="<?php echo $value->alu_declaracao_empresa; ?>"
+                            data-alu_dt_declaracao_empresa="<?php echo $value->alu_dt_declaracao_empresa; ?>"
+                            data-alu_convenio="<?php echo $value->alu_convenio; ?>"
+                            data-alu_dt_convenio="<?php echo $value->alu_dt_convenio; ?>"
+                            data-alu_compromisso="<?php echo $value->alu_compromisso; ?>"
+                            data-alu_dt_compromisso="<?php echo $value->alu_dt_compromisso; ?>"
+                            data-alu_relatorio="<?php echo $value->alu_relatorio; ?>"
+                            data-alu_dt_relatorio="<?php echo $value->alu_dt_relatorio; ?>"
+                            data-alu_declaracao_fib_impressa="<?php echo $value->alu_declaracao_fib_impressa; ?>"
+                            data-alu_declaracao_fib_data="<?php echo $value->alu_declaracao_fib_data; ?>"
+                            data-alu_pendencia="<?php echo $value->alu_pendencia; ?>"
+                            >
     						    <span class="glyphicon glyphicon-pencil"></span>
     						</button>
     					</td>
