@@ -235,6 +235,26 @@ class Estagio extends Crud {
 		return $stmt->execute();
 	}
 
+	public function declaraFib($alu_declaracao_fib_impressa) {
+
+		$sql  = "SELECT * FROM $this->table WHERE alu_declaracao_fib_impressa LIKE ? ORDER BY alu_nome";
+		$stmt = DB::prepare($sql);
+		$stmt->bindValue(1, "%$alu_declaracao_fib_impressa%");
+		$stmt->execute();
+		return $stmt->fetchAll();
+
+	}
+
+	public function pendencia($alu_pendencia) {
+
+		$sql  = "SELECT * FROM $this->table WHERE alu_pendencia LIKE ? ORDER BY alu_nome";
+		$stmt = DB::prepare($sql);
+		$stmt->bindValue(1, "%$alu_pendencia%");
+		$stmt->execute();
+		return $stmt->fetchAll();
+
+	}
+
 }
 
 ?>

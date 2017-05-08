@@ -12,7 +12,7 @@ if(isset($_GET['excluir'])){
 
 
 
-$lista->findAll();
+$listagem = $lista->findAll();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -101,97 +101,11 @@ $lista->findAll();
 </head>
 
 <body>
-    <nav class="navbar navbar-default">
-        <div class="container-fluid">
-            <!-- Menu para navegacao mobile -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs1" aria-expanded="false">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-                <a class="navbar-brand" href="#">Controle de Estágio</a>
-            </div>
-            <!-- Fim Menu para navegacao mobile -->
-
-            <div class="collapse navbar-collapse" id="bs1">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Cadastro <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="incluir.php">Incluir</a></li>
-                            <li><a href="consulta.php">Consulta</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Relatórios <span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="pendencia.php">Declaração Fib</a></li>
-                            <li><a href="teste.php">Pendência</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-        <!--Fim da <div class="container-fluid">-->
-    </nav>
+    <?php require_once('menu.php') ?>
     <!--Fim da navbar-->
     <div class="container-fluid" id="content">
-    	<div id="listar" class="col-md-5 col-md-offset-3">
-    		<table class="table table-striped table-responsive table-condensed">
-    			<thead>
-    				<th>Id</th>
-    				<th>Nome</th>
-    				<th>Ra</th>
-    				<th>Email</th>
-    				<th colspan="2">Acoes</th>
-    			</thead>
-    			<tbody>
-    				<?php foreach ( $lista->findAll() as $key => $value) { ?>
-    				<tr>
-    					<td><?php echo $value->alu_id; ?></td>
-    					<td><?php echo $value->alu_nome; ?></td>
-    					<td><?php echo $value->alu_ra; ?></td>
-    					<td><?php echo $value->alu_email; ?></td>
-    					<td>
-    						<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAlterar" data-alu_id="<?php echo $value->alu_id; ?>"
-                            data-alu_nome="<?php echo $value->alu_nome; ?>"
-                            data-alu_ra="<?php echo $value->alu_ra; ?>"
-                            data-alu_celular="<?php echo $value->alu_celular; ?>"
-                            data-alu_email="<?php echo $value->alu_email; ?>"
-                            data-alu_anoturma="<?php echo $value->alu_anoturma; ?>"
-                            data-alu_trabalha="<?php echo $value->alu_trabalha; ?>"
-                            data-alu_empresa="<?php echo $value->alu_empresa; ?>"
-                            data-alu_dt_trabalha="<?php echo $value->alu_dt_trabalha; ?>"
-                            data-alu_carteira="<?php echo $value->alu_carteira; ?>"
-                            data-alu_dt_carteira="<?php echo $value->alu_dt_carteira; ?>"
-                            data-alu_declaracao_empresa="<?php echo $value->alu_declaracao_empresa; ?>"
-                            data-alu_dt_declaracao_empresa="<?php echo $value->alu_dt_declaracao_empresa; ?>"
-                            data-alu_convenio="<?php echo $value->alu_convenio; ?>"
-                            data-alu_dt_convenio="<?php echo $value->alu_dt_convenio; ?>"
-                            data-alu_compromisso="<?php echo $value->alu_compromisso; ?>"
-                            data-alu_dt_compromisso="<?php echo $value->alu_dt_compromisso; ?>"
-                            data-alu_relatorio="<?php echo $value->alu_relatorio; ?>"
-                            data-alu_dt_relatorio="<?php echo $value->alu_dt_relatorio; ?>"
-                            data-alu_declaracao_fib_impressa="<?php echo $value->alu_declaracao_fib_impressa; ?>"
-                            data-alu_declaracao_fib_data="<?php echo $value->alu_declaracao_fib_data; ?>"
-                            data-alu_pendencia="<?php echo $value->alu_pendencia; ?>"
-                            >
-    						    <span class="glyphicon glyphicon-pencil"></span>
-    						</button>
-    					</td>
-    					<td>
-    						<a href="?excluir=<?php echo $value->alu_id; ?>" type="button" class="btn btn-danger btn-xs">
-    						    <span class="glyphicon glyphicon-trash"></span>
-    						</a>
-    					</td>
-    				</tr>
-    				<?php } ?>
-    			</tbody>
-    		</table>
-    	</div>
+      
+    	<?php require_once('listar.php'); ?>
     </div>
     <div class="modal fade" id="modalAlterar" tabindex="-1" role="dialog">
       <div class="modal-dialog" role="document">

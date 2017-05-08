@@ -1,3 +1,22 @@
+<?php
+function __autoload($classe) {
+    require_once 'classes/'.$classe.'.php';
+}
+
+$lista = new Estagio();
+
+if(isset($_GET['excluir'])){
+    $id = $_GET['excluir'];
+    $lista->delete($id);
+}
+
+
+if(isset($_GET['alu_pendencia'])){
+    $listagem = $lista->pendencia($_GET['alu_pendencia']);
+}else{
+    $listagem = $lista->pendencia('h');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,7 +43,7 @@
             $("#btn").click(function(e) {
                 alert("clicou");
             });
-            $("#content>.btn-danger").click(function(e) {
+            $("#content>.btn-danger").click(function(e){
                 //e.preventDefault();
                 alert("deletou");
             });
@@ -37,7 +56,8 @@
     <?php require_once('menu.php') ?>
     <!--Fim da navbar-->
     <div class="container-fluid" id="content">
-        <?php require_once('formIncluir.php') ?>
+        <?php require_once('formPesquisa.php') ?>
+        <?php require_once('listar.php'); ?>
     </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

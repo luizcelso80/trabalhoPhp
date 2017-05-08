@@ -111,8 +111,8 @@
             </div>
             <div class="form-group">
                 <label for="alu_pendencia">Pendência</label><br/>
-                <label class="radio-inline"><input name="alu_pendencia_sim" id="alu_pendencia" value="s" type="radio">Sim</label>
-                <label class="radio-inline"><input name="alu_pendencia_nao" id="alu_pendencia" value="n" type="radio">Não</label>
+                <label class="radio-inline"><input name="alu_pendencia" id="alu_pendencias" value="s" type="radio">Sim</label>
+                <label class="radio-inline"><input name="alu_pendencia" id="alu_pendencian" value="n" type="radio">Não</label>
             </div>
             <!--<div class="checkbox">
                 <label>
