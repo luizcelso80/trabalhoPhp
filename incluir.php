@@ -72,10 +72,9 @@
     </nav>
     <!--Fim da navbar-->
     <div class="container-fluid" id="content">
-        <form action="dbIncluir.php" method="post" name="formIncluir">
+        <form action="dbIncluir.php" method="post" name="form1" onChange="pendencia()">
             <div class="form-group">
                 <!--<label for="alu_id">ID</label>-->
-
                 <input type="hidden" class="form-control" id="alu_id" name="alu_id" readonly="readonly">
             </div>
             <div class="form-group">
@@ -101,29 +100,100 @@
             <div class="form-group">
                 <label for="alu_trabalha">Trabalha?</label><br/>
                 <label class="radio-inline">
-            <input name="alu_trabalha" id="alu_trabalha" value="s" type="radio" onclick="ativa('s', 'informacoesTrabalho')">
+            <input name="alu_trabalha" id="alu_trabalha_s" value="s" type="radio" onclick="trabalha(this.value, 'id_trabalha')">
             Sim
         </label>
                 <label class="radio-inline">
-            <input name="alu_trabalha" id="alu_trabalha" value="n" checked="" type="radio" onclick="ativa('n', 'informacoesTrabalho')">
+            <input name="alu_trabalha" id="alu_trabalha_n" value="n" type="radio" onclick="trabalha(this.value, 'id_trabalha')">
             Não
         </label>
                 <script type="text/javascript">
-                    function ativa(val, id) {
+                    window.onload = function() {
+                        //alert("Entrou");
+                        document.getElementById("alu_trabalha_n").checked = true;
+                        document.getElementById("alu_carteira_n").checked = true;
+                        document.getElementById("alu_declaracao_empresa_n").checked = true;
+                        document.getElementById("alu_convenio_n").checked = true;
+                        document.getElementById("alu_compromisso_n").checked = true;
+                        document.getElementById("alu_relatorio_n").checked = true;
+                        document.getElementById("alu_declaracao_fib_impressa_n").checked = true;
+                        document.getElementById("alu_pendencia_n").checked = true;
+
+                        document.getElementById("id_trabalha").style.display = 'none';
+                        document.getElementById("id_convenio").style.display = 'none';
+                        document.getElementById("id_compromisso").style.display = 'none';
+                        document.getElementById("id_relatorio").style.display = 'none';
+                        document.getElementById("id_declaracaoFib").style.display = 'none';
+                    }
+
+                    function pendencia() {                        
+                        var trabalha = form1.alu_trabalha.value; //radio
+                        var carteira = form1.alu_carteira.value; //radio
+                        var declaracao = form1.alu_declaracao_empresa.value; //radio
+                        var convenio = form1.alu_convenio.value; //radio
+                        var compromisso = form1.alu_compromisso.value; //radio
+                        var relatorio = form1.alu_relatorio.value; //radio                       
+                        
+                       
+                        if (trabalha == "s" && carteira == "n" && declaracao == "n" && relatorio == "n") {
+                            //Pendencia: SIM 
+                            document.getElementById("alu_pendencia_s").checked = true;
+                            document.getElementById("alu_pendencia_n").checked = false;
+                        } else if (trabalha == "n" && convenio == "s" && compromisso == "s" && relatorio == "s") {
+                            //Pendencia: SIM 
+                            document.getElementById("alu_pendencia_s").checked = true;
+                            document.getElementById("alu_pendencia_n").checked = false;
+                        } else {
+                            //Pendencia: NÃO 
+                            document.getElementById("alu_pendencia_s").checked = false;
+                            document.getElementById("alu_pendencia_n").checked = true;
+                        }
+                        
+                    }
+
+                    function trabalha(val, id) {
                         if (val == "s") {
                             document.getElementById(id).style.display = 'block';
-                            document.formIncluir.alu_pendencia_sim.checked = true;
-                            document.formIncluir.alu_pendencia_nao.checked = false;
                         } else {
                             document.getElementById(id).style.display = 'none';
-                            document.formIncluir.alu_pendencia_nao.checked = true;
-                            document.formIncluir.alu_pendencia_sim.checked = false;
+                        }
+                    }
+
+                    function convenio(val, id) {
+                        if (val == "s") {
+                            document.getElementById(id).style.display = 'block';
+                        } else {
+                            document.getElementById(id).style.display = 'none';
+                        }
+                    }
+
+                    function compromisso(val, id) {
+                        if (val == "s") {
+                            document.getElementById(id).style.display = 'block';
+                        } else {
+                            document.getElementById(id).style.display = 'none';
+                        }
+                    }
+
+                    function relatorio(val, id) {
+                        if (val == "s") {
+                            document.getElementById(id).style.display = 'block';
+                        } else {
+                            document.getElementById(id).style.display = 'none';
+                        }
+                    }
+
+                    function declaracaoFib(val, id) {
+                        if (val == "s") {
+                            document.getElementById(id).style.display = 'block';
+                        } else {
+                            document.getElementById(id).style.display = 'none';
                         }
                     }
 
                 </script>
             </div>
-            <div id="informacoesTrabalho" style="display: none;">
+            <div id="id_trabalha">
                 <div class="form-group">
                     <label for="alu_empresa">Empresa</label>
                     <input type="text" name="alu_empresa" class="form-control" id="alu_empresa" placeholder="Nome da empresa">
@@ -134,13 +204,25 @@
                 </div>
                 <div class="form-group">
                     <label for="alu_carteira">Copia carteira de trabalho</label><br/>
-                    <label class="radio-inline"><input name="alu_carteira" id="alu_carteira" value="s" type="radio">Entregue</label>
-                    <label class="radio-inline"><input name="alu_carteira" id="alu_carteira" value="n" checked="" type="radio">Não entregue</label>
+                    <label class="radio-inline">
+                        <input name="alu_carteira" id="alu_carteira_s" value="s" type="radio">
+                        Entregue
+                    </label>
+                    <label class="radio-inline">
+                        <input name="alu_carteira" id="alu_carteira_n" value="n" type="radio">
+                        Não entregue
+                    </label>
                 </div>
                 <div class="form-group">
                     <label for="alu_declaracao_empresa">Declaração da empresa</label><br/>
-                    <label class="radio-inline"><input name="alu_declaracao_empresa" id="alu_declaracao_empresa" value="s" type="radio">Entregue</label>
-                    <label class="radio-inline"><input name="alu_declaracao_empresa" id="alu_declaracao_empresa" value="n" checked="" type="radio">Não entregue</label>
+                    <label class="radio-inline">
+                        <input name="alu_declaracao_empresa" id="alu_declaracao_empresa_s" value="s" type="radio">
+                        Entregue
+                    </label>
+                    <label class="radio-inline">
+                        <input name="alu_declaracao_empresa" id="alu_declaracao_empresa_n" value="n" type="radio">
+                        Não entregue
+                    </label>
                 </div>
                 <div class="form-group">
                     <label for="alu_dt_declaracao_empresa">Data da declaração da empresa</label>
@@ -149,58 +231,80 @@
             </div>
             <div class="form-group">
                 <label for="alu_convenio">Possui convênio</label><br/>
-                <label class="radio-inline"><input name="alu_convenio" id="alu_convenio" value="s" type="radio">Sim</label>
-                <label class="radio-inline"><input name="alu_convenio" id="alu_convenio" value="n" checked="" type="radio">Não</label>
+                <label class="radio-inline">
+                    <input name="alu_convenio" id="alu_convenio_s" value="s" type="radio" onclick="convenio(this.value, 'id_convenio')">
+                    Sim
+                </label>
+                <label class="radio-inline">
+                    <input name="alu_convenio" id="alu_convenio_n" value="n" type="radio" onclick="convenio(this.value, 'id_convenio')">
+                    Não
+                </label>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="id_convenio">
                 <label for="alu_dt_convenio">Data do convenio</label>
                 <input type="date" name="alu_dt_convenio" class="form-control" id="alu_dt_convenio">
             </div>
             <div class="form-group">
                 <label for="alu_compromisso">Compromisso</label><br/>
-                <label class="radio-inline"><input name="alu_compromisso" id="alu_compromisso" value="s" type="radio">Sim</label>
-                <label class="radio-inline"><input name="alu_compromisso" id="alu_compromisso" value="n" checked="" type="radio">Não</label>
+                <label class="radio-inline">
+                    <input name="alu_compromisso" id="alu_compromisso_s" value="s" type="radio" onclick="compromisso(this.value, 'id_compromisso')">
+                    Sim
+                </label>
+                <label class="radio-inline">
+                    <input name="alu_compromisso" id="alu_compromisso_n" value="n" type="radio" onclick="compromisso(this.value, 'id_compromisso')">
+                    Não
+                </label>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="id_compromisso">
                 <label for="alu_dt_compromisso">Data do compromisso</label>
                 <input type="date" name="alu_dt_compromisso" class="form-control" id="alu_dt_compromisso">
             </div>
             <div class="form-group">
                 <label for="alu_relatorio">Relatório</label><br/>
-                <label class="radio-inline"><input name="alu_relatorio" id="alu_relatorio" value="s" type="radio">Entregue</label>
-                <label class="radio-inline"><input name="alu_relatorio" id="alu_relatorio" value="n" checked="" type="radio">Não entregue</label>
+                <label class="radio-inline">
+                    <input name="alu_relatorio" id="alu_relatorio_s" value="s" type="radio" onclick="relatorio(this.value, 'id_relatorio')">
+                    Entregue
+                </label>
+                <label class="radio-inline">
+                    <input name="alu_relatorio" id="alu_relatorio_n" value="n" type="radio" onclick="relatorio(this.value, 'id_relatorio')">
+                    Não entregue
+                </label>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="id_relatorio">
                 <label for="alu_dt_relatorio">Data do relatório</label>
                 <input type="date" name="alu_dt_relatorio" class="form-control" id="alu_dt_relatorio">
             </div>
             <div class="form-group">
                 <label for="alu_declaracao_fib_impressa">Declaração FIB impressa</label><br/>
-                <label class="radio-inline"><input name="alu_declaracao_fib_impressa" id="alu_declaracao_fib_impressa" value="s" type="radio">Entregue</label>
-                <label class="radio-inline"><input name="alu_declaracao_fib_impressa" id="alu_declaracao_fib_impressa" value="n" checked="" type="radio">Não entregue</label>
+                <label class="radio-inline">
+                    <input name="alu_declaracao_fib_impressa" id="alu_declaracao_fib_impressa_s" value="s" type="radio" onclick="declaracaoFib(this.value, 'id_declaracaoFib')">
+                    Entregue
+                </label>
+                <label class="radio-inline">
+                    <input name="alu_declaracao_fib_impressa" id="alu_declaracao_fib_impressa_n" value="n" type="radio" onclick="declaracaoFib(this.value, 'id_declaracaoFib')">
+                    Não entregue
+                </label>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="id_declaracaoFib">
                 <label for="alu_declaracao_fib_data">Data do declaração FIB</label>
                 <input type="date" name="alu_declaracao_fib_data" class="form-control" id="alu_declaracao_fib_data">
             </div>
             <div class="form-group">
                 <label for="alu_pendencia">Pendência</label><br/>
-                <label class="radio-inline"><input name="alu_pendencia_sim" id="alu_pendencia" value="s" type="radio">Sim</label>
-                <label class="radio-inline"><input name="alu_pendencia_nao" id="alu_pendencia" value="n" type="radio">Não</label>
-            </div>
-            <!--<div class="checkbox">
-                <label>
-                    <input type="checkbox"> Check me out
+                <label class="radio-inline">
+                    <input name="alu_pendencia" id="alu_pendencia_s" value="s" type="radio">
+                    Sim
                 </label>
-            </div>-->
+                <label class="radio-inline">
+                    <input name="alu_pendencia" id="alu_pendencia_n" value="n" type="radio">
+                    Não
+                </label>
+            </div>
+
             <input type="submit" class="btn btn-default" value="Cadastrar">
 
         </form>
     </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
 
 </body>
 
