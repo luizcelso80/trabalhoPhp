@@ -37,12 +37,10 @@
     <?php require_once('menu.php') ?>
     <!--Fim da navbar-->
     <div class="container-fluid" id="content">
+
         <?php require_once('formIncluir.php') ?>
+
     </div>
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
 
 </body>
 
