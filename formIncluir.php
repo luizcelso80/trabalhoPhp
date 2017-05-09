@@ -27,11 +27,11 @@
             <div class="form-group">
                 <label for="alu_trabalha">Trabalha?</label><br/>
                 <label class="radio-inline">
-            <input name="alu_trabalha" id="alu_trabalha" value="s" type="radio" onclick="ativa('s', 'informacoesTrabalho')">
+            <input name="alu_trabalha" id="alu_trabalha1" value="s" type="radio" onclick="ativa('s', 'informacoesTrabalho')">
             Sim
         </label>
                 <label class="radio-inline">
-            <input name="alu_trabalha" id="alu_trabalha" value="n" checked="" type="radio" onclick="ativa('n', 'informacoesTrabalho')">
+            <input name="alu_trabalha" id="alu_trabalha2" value="n" checked="" type="radio" onclick="ativa('n', 'informacoesTrabalho')">
             Não
         </label>
                 <script type="text/javascript">
@@ -60,13 +60,13 @@
                 </div>
                 <div class="form-group">
                     <label for="alu_carteira">Copia carteira de trabalho</label><br/>
-                    <label class="radio-inline"><input name="alu_carteira" id="alu_carteira" value="s" type="radio">Entregue</label>
-                    <label class="radio-inline"><input name="alu_carteira" id="alu_carteira" value="n" checked="" type="radio">Não entregue</label>
+                    <label class="radio-inline"><input name="alu_carteira" id="alu_carteira1" value="s" type="radio">Entregue</label>
+                    <label class="radio-inline"><input name="alu_carteira" id="alu_carteira2" value="n" checked="" type="radio">Não entregue</label>
                 </div>
                 <div class="form-group">
                     <label for="alu_declaracao_empresa">Declaração da empresa</label><br/>
-                    <label class="radio-inline"><input name="alu_declaracao_empresa" id="alu_declaracao_empresa" value="s" type="radio">Entregue</label>
-                    <label class="radio-inline"><input name="alu_declaracao_empresa" id="alu_declaracao_empresa" value="n" checked="" type="radio">Não entregue</label>
+                    <label class="radio-inline"><input name="alu_declaracao_empresa" id="alu_declaracao_empresa1" value="s" type="radio">Entregue</label>
+                    <label class="radio-inline"><input name="alu_declaracao_empresa" id="alu_declaracao_empresa2" value="n" checked="" type="radio">Não entregue</label>
                 </div>
                 <div class="form-group">
                     <label for="alu_dt_declaracao_empresa">Data da declaração da empresa</label>
@@ -75,8 +75,8 @@
             </div>
             <div class="form-group">
                 <label for="alu_convenio">Possui convênio</label><br/>
-                <label class="radio-inline"><input name="alu_convenio" id="alu_convenio" value="s" type="radio">Sim</label>
-                <label class="radio-inline"><input name="alu_convenio" id="alu_convenio" value="n" checked="" type="radio">Não</label>
+                <label class="radio-inline"><input name="alu_convenio" id="alu_convenio1" value="s" type="radio">Sim</label>
+                <label class="radio-inline"><input name="alu_convenio" id="alu_convenio2" value="n" checked="" type="radio">Não</label>
             </div>
             <div class="form-group">
                 <label for="alu_dt_convenio">Data do convenio</label>
@@ -84,8 +84,8 @@
             </div>
             <div class="form-group">
                 <label for="alu_compromisso">Compromisso</label><br/>
-                <label class="radio-inline"><input name="alu_compromisso" id="alu_compromisso" value="s" type="radio">Sim</label>
-                <label class="radio-inline"><input name="alu_compromisso" id="alu_compromisso" value="n" checked="" type="radio">Não</label>
+                <label class="radio-inline"><input name="alu_compromisso" id="alu_compromisso1" value="s" type="radio">Sim</label>
+                <label class="radio-inline"><input name="alu_compromisso" id="alu_compromisso2" value="n" checked="" type="radio">Não</label>
             </div>
             <div class="form-group">
                 <label for="alu_dt_compromisso">Data do compromisso</label>
@@ -93,8 +93,8 @@
             </div>
             <div class="form-group">
                 <label for="alu_relatorio">Relatório</label><br/>
-                <label class="radio-inline"><input name="alu_relatorio" id="alu_relatorio" value="s" type="radio">Entregue</label>
-                <label class="radio-inline"><input name="alu_relatorio" id="alu_relatorio" value="n" checked="" type="radio">Não entregue</label>
+                <label class="radio-inline"><input name="alu_relatorio" id="alu_relatorio1" value="s" type="radio">Entregue</label>
+                <label class="radio-inline"><input name="alu_relatorio" id="alu_relatorio2" value="n" checked="" type="radio">Não entregue</label>
             </div>
             <div class="form-group">
                 <label for="alu_dt_relatorio">Data do relatório</label>
@@ -102,8 +102,8 @@
             </div>
             <div class="form-group">
                 <label for="alu_declaracao_fib_impressa">Declaração FIB impressa</label><br/>
-                <label class="radio-inline"><input name="alu_declaracao_fib_impressa" id="alu_declaracao_fib_impressa" value="s" type="radio">Entregue</label>
-                <label class="radio-inline"><input name="alu_declaracao_fib_impressa" id="alu_declaracao_fib_impressa" value="n" checked="" type="radio">Não entregue</label>
+                <label class="radio-inline"><input name="alu_declaracao_fib_impressa" id="alu_declaracao_fib_impressa1" value="s" type="radio">Entregue</label>
+                <label class="radio-inline"><input name="alu_declaracao_fib_impressa" id="alu_declaracao_fib_impressa2" value="n" checked="" type="radio">Não entregue</label>
             </div>
             <div class="form-group">
                 <label for="alu_declaracao_fib_data">Data do declaração FIB</label>

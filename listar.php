@@ -50,4 +50,6 @@
 				<?php } ?>
 			</tbody>
 		</table>
+		<button type="button" class="fa fa-file-pdf-o btn btn-danger" aria-hidden="true"></button>
+		<button type="button" class="fa fa-file-excel-o btn btn-success" aria-hidden="true"></button>
 	</div>

@@ -1,10 +1,10 @@
-<form class="form-inline">
+<form class="form-inline" id="pesquisar">
   <div class="form-group">
-    <label for="alu_pendencia">Name</label>
-    <select id="alu_pendencia" class="form-control" name="alu_pendencia">
+    <label for="alu_pendencia">Pendencia</label>
+    <select id="alu_pendencia" class="form-control" name="alu_pendencia" onchange="javascript:pesquisar.submit()">
+		<option value=""></option>
       <option value="s">Sim</option>
       <option value="n">Nao</option>
     </select>
   </div>
-  <button type="submit" class="btn btn-primary">Pesquisar</button>
 </form>

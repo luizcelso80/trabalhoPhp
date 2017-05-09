@@ -13,8 +13,8 @@ $alu_empresa                 = isset($_REQUEST['alu_empresa']) ? $_REQUEST['alu_
 $alu_dt_trabalha             = isset($_REQUEST['alu_dt_trabalha']) ? $_REQUEST['alu_dt_trabalha']: NULL;
 $alu_carteira                = isset($_REQUEST['alu_carteira']) ? $_REQUEST['alu_carteira']: NULL;
 $alu_dt_carteira             = isset($_REQUEST['alu_dt_carteira']) ? $_REQUEST['alu_dt_carteira']: NULL;
-$alu_declaracao_empresa      = isset($_REQUEST['alu_declaracao']) ? $_REQUEST['alu_declaracao']: NULL;
-$alu_dt_declaracao_empresa   = isset($_REQUEST['alu_declaracao_empresa']) ? $_REQUEST['alu_declaracao_empresa']: NULL;
+$alu_declaracao_empresa      = isset($_REQUEST['alu_declaracao_empresa']) ? $_REQUEST['alu_declaracao_empresa']: NULL;
+$alu_dt_declaracao_empresa   = isset($_REQUEST['alu_dt_declaracao_empresa']) ? $_REQUEST['alu_dt_declaracao_empresa']: NULL;
 $alu_convenio                = isset($_REQUEST['alu_convenio']) ? $_REQUEST['alu_convenio']: NULL;
 $alu_dt_convenio             = isset($_REQUEST['alu_dt_convenio']) ? $_REQUEST['alu_dt_convenio']: NULL;
 $alu_compromisso             = isset($_REQUEST['alu_compromisso']) ? $_REQUEST['alu_compromisso']: NULL;
@@ -23,7 +23,24 @@ $alu_relatorio               = isset($_REQUEST['alu_relatorio']) ? $_REQUEST['al
 $alu_dt_relatorio            = isset($_REQUEST['alu_dt_relatorio']) ? $_REQUEST['alu_dt_relatorio']: NULL;
 $alu_declaracao_fib_impressa = isset($_REQUEST['alu_declaracao_fib_impressa']) ? $_REQUEST['alu_declaracao_fib_impressa']: NULL;
 $alu_declaracao_fib_data     = isset($_REQUEST['alu_declaracao_fib_data']) ? $_REQUEST['alu_declaracao_fib_data']: NULL;
-$alu_pendencia               = isset($_REQUEST['alu_pendencia']) ? $_REQUEST['alu_pendencia']: NULL;
+
+if($alu_trabalha == 's'){
+    echo "trabalha";
+    if($alu_carteira == 's' && $alu_declaracao_empresa == 's' && $alu_relatorio == 's'){
+        $alu_pendencia = 'n';
+    }else{
+        $alu_pendencia = 's';
+    }
+}else{
+    echo "trabalha";
+    echo $alu_trabalha;
+    if($alu_convenio == 's' && $alu_compromisso == 's' && $alu_relatorio == 's'){
+        $alu_pendencia = 'n';
+    }else{
+        $alu_pendencia = 's';
+    }
+}
+
 
 
 $novoAluno = new Estagio();
@@ -69,7 +86,7 @@ if($alu_id){
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
