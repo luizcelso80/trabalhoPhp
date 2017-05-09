@@ -50,6 +50,5 @@
 				<?php } ?>
 			</tbody>
 		</table>
-		<a type="button" href="imprimir.php?alu_pendencia=<?php echo isset($_GET['alu_pendencia'])? $_GET['alu_pendencia']:NULL ; ?>" target="_blank" class="fa fa-file-pdf-o btn btn-danger" aria-hidden="true"></a>
-		<a type="button" href="excel.php?alu_pendencia=<?php echo isset($_GET['alu_pendencia'])? $_GET['alu_pendencia']:NULL ; ?>" class="fa fa-file-excel-o btn btn-success" aria-hidden="true"></a>
+		
 	</div>
