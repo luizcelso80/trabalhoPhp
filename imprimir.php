@@ -1,8 +1,8 @@
 <?php
 date_default_timezone_get('America/Sao_Paulo');
 require "fpdf/fpdf.php";
-require_once "lib.php";
-
+require_once "classes/Estagio.php";
+$alu_pendencia = $_GET['alu_pendencia'];
 class Imprimir extends FPDF {
 	function Header() {
 		$this->Rect(10, 10, 190, 265);
@@ -15,7 +15,7 @@ class Imprimir extends FPDF {
 		$this->Cell(150, $linha, 'FIB', 1, 0, 'C');
 		$this->Cell(20, $linha, $hoje, 1, 0, 'C');
 
-		$this->Image('logo.png', 101, 11, -300);
+		//$this->Image('logo.png', 101, 11, -300);
 
 		$this->ln();
 		$this->SetFillColor(36, 109, 0);
@@ -48,12 +48,16 @@ $pdf->SetFont('Arial', '', 8);
 $contaLinha = 1;
 $y = 30;
 $x = 5;
-$sql = "SELECT * FROM grupo order by gru_id";
-$con = conexao();
-$res = $con->query($sql) or die("Erro: " . $sql);
-while ($row = $res->fetch_array(MYSQLI_ASSOC)) {
-	$id = $row["gru_id"];
-	$nome = $row["gru_nome"];
+$relatorio = new Estagio();
+if($alu_pendencia == 's' || $alu_pendencia == 'n'){
+	$res = $relatorio->pendencia($alu_pendencia);
+}else{
+	$res = $relatorio->findAll();
+}
+
+foreach ( $res as $key => $value) {
+	$id = $value->alu_id;
+	$nome = $value->alu_nome;
 	if ($contaLinha >= 50) {
 		$pdf->AddPage();
 		$contaLinha = 1;
