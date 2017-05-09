@@ -3,16 +3,25 @@ date_default_timezone_get('America/Sao_Paulo');
 require "fpdf/fpdf.php";
 require_once "classes/Estagio.php";
 $alu_pendencia = $_GET['alu_pendencia'];
+if($alu_pendencia == 's' || $alu_pendencia == 'n'){
+	if($alu_pendencia == 's'){
+		$doc = "Alunos-Pendentes";
+	}else{
+		$doc = "Alunos-Regularizados";
+	}
+}else{
+	$doc = "Lista-Geral";
+}
 class Imprimir extends FPDF {
 	function Header() {
-		$this->Rect(10, 10, 190, 265);
+		$this->Rect(10, 10, 190, 266);
 		$this->SetFont('Arial', 'B', 8);
 		$this->SetXY(10, 10);
 		$agora = date("G:i:s");
 		$hoje = date("d/m/Y");
 		$linha = 15;
 		$this->Cell(20, $linha, $agora, 1, 0, 'C');
-		$this->Cell(150, $linha, 'FIB', 1, 0, 'C');
+		$this->Cell(150, $linha, 'FIB-'.$GLOBALS["doc"], 1, 0, 'C');
 		$this->Cell(20, $linha, $hoje, 1, 0, 'C');
 
 		//$this->Image('logo.png', 101, 11, -300);
@@ -21,8 +30,8 @@ class Imprimir extends FPDF {
 		$this->SetFillColor(36, 109, 0);
 		$this->SetTextColor(255, 255, 255);
 		$this->SetFont('Arial', 'B', 8);
-		$this->Cell(20, 5, 'ID', 'LTR', 0, 'C', 1);
-		$this->Cell(170, 5, 'Nome do Grupo', 'LTR', 0, 'C', 1);
+		$this->Cell(20, 5, 'RA', 'LTR', 0, 'C', 1);
+		$this->Cell(170, 5, 'Nome do aluno', 'LTR', 0, 'C', 1);
 
 	}
 
@@ -51,12 +60,18 @@ $x = 5;
 $relatorio = new Estagio();
 if($alu_pendencia == 's' || $alu_pendencia == 'n'){
 	$res = $relatorio->pendencia($alu_pendencia);
+	if($alu_pendencia == 's'){
+		$doc = "alunosPendentes";
+	}else{
+		$doc = "alunosRegularizados";
+	}
 }else{
 	$res = $relatorio->findAll();
+	$doc = "listaGeral";
 }
 
 foreach ( $res as $key => $value) {
-	$id = $value->alu_id;
+	$id = $value->alu_ra;
 	$nome = $value->alu_nome;
 	if ($contaLinha >= 50) {
 		$pdf->AddPage();
@@ -84,6 +99,6 @@ foreach ( $res as $key => $value) {
 // Then put a blue underlined link
 
 //Imprime o PDF na tela
-$pdf->OutPut();
+$pdf->OutPut("I",$doc);
 
 ?>
