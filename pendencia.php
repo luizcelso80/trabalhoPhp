@@ -47,7 +47,7 @@ if(isset($_GET['alu_pendencia'])){
             });
             $("#content>.btn-danger").click(function(e){
                 //e.preventDefault();
-                alert("deletou");
+                //alert("deletou");
             });
         });
 
@@ -60,6 +60,9 @@ if(isset($_GET['alu_pendencia'])){
     <div class="container-fluid" id="content">
         <?php require_once('formPesquisa.php') ?>
         <?php require_once('listar.php'); ?>
+        
+            <a type="button" href="imprimir.php?alu_pendencia=<?php echo isset($_GET['alu_pendencia'])? $_GET['alu_pendencia']:NULL ; ?>" target="_blank" class="fa fa-file-pdf-o btn btn-danger" aria-hidden="true"></a>
+            <a type="button" href="excel.php?alu_pendencia=<?php echo isset($_GET['alu_pendencia'])? $_GET['alu_pendencia']:NULL ; ?>" class="fa fa-file-excel-o btn btn-success" aria-hidden="true"></a>
         
     </div>
 
