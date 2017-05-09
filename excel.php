@@ -4,6 +4,21 @@ error_reporting(E_ALL);
 define('EOL', (PHP_SAPI == 'cli') ? PHP_EOL : '</br>');
 require_once 'phpexcel/Classes/PHPExcel.php';
 require_once 'phpexcel/Classes/PHPExcel/IOFactory.php';
+require_once 'classes/Estagio.php';
+
+$relatorio = new Estagio();
+$alu_pendencia = $_GET['alu_pendencia'];
+if($alu_pendencia == 's' || $alu_pendencia == 'n'){
+	$res = $relatorio->pendencia($alu_pendencia);
+	if($alu_pendencia == 's'){
+		$doc = "Alunos-Pendentes";
+	}else{
+		$doc = "Alunos-Regularizados";
+	}
+}else{
+	$res = $relatorio->findAll();
+	$doc = "Lista-Geral";
+}
 
 /*error_reporting(E_ALL);
 ini_set('display_errors', TRUE);
@@ -16,7 +31,7 @@ die('This example should only be run from a Web Browser');
 
 /** Include PHPExcel */
 //require_once dirname(__FILE__) . '/phpexcel/Classes/PHPExcel.php';
-require_once "lib.php";
+
 
 $objPHPExcel = new PHPExcel();
 $objPHPExcel->getProperties()->setCreator("Luizao Zika")
@@ -28,8 +43,10 @@ $objPHPExcel->getProperties()->setCreator("Luizao Zika")
 	->setCategory("Test result file");
 
 $objPHPExcel->setActiveSheetIndex(0)
-	->setCellValue('A1', 'ID')
-	->setCellValue('B1', 'NOME');
+	->mergeCells('A1:B1')
+	->setCellValue('A1',$doc)
+	->setCellValue('A2', 'ID')
+	->setCellValue('B2', 'NOME');
 
 $objPHPExcel->getActiveSheet()->getColumnDimension('A')
 	->setAutoSize(true);
@@ -61,20 +78,18 @@ $objPHPExcel->getActiveSheet()->getStyle('A1:B1')
 		)
 	);
 
-$con = conexao();
-$sql = "SELECT * FROM grupo order by gru_id";
-$res = $con->query($sql);
 
-$i = 2;
-while ($linha = $res->fetch_assoc()) {
+
+foreach ( $res as $key => $value) {
+	$i = $key + 3;
 	$objPHPExcel->setActiveSheetIndex(0)
-		->setCellValue('A' . $i, $linha['gru_id'])
-		->setCellValue('B' . $i, $linha['gru_nome']);
+		->setCellValue('A' . $i, $value->alu_ra)
+		->setCellValue('B' . $i, $value->alu_nome);
 
-	$i++;
+	
 }
 
-$objPHPExcel->getActiveSheet()->setTitle('Simple');
+$objPHPExcel->getActiveSheet()->setTitle($doc);
 
 // Set active sheet index to the first sheet, so Excel opens this as the first sheet
 $objPHPExcel->setActiveSheetIndex(0);
