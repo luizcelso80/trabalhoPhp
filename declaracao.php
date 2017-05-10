@@ -58,8 +58,14 @@ if(isset($_GET['alu_pendencia'])){
     <?php require_once('menu.php') ?>
     <!--Fim da navbar-->
     <div class="container-fluid" id="content">
-        <?php require_once('formPesquisa.php') ?>
-        <?php require_once('listar.php'); ?>
+        <div class="panel panel-default">
+          <div class="panel-heading"><b>Entrega da Declaracao Fib</b></div>
+          <div class="panel-body">
+            <?php require_once('formPesquisa.php') ?>
+            <?php require_once('listar.php'); ?>
+          </div>
+        </div>
+        
         
             <a type="button" href="imprimir2.php?alu_pendencia=<?php echo isset($_GET['alu_pendencia'])? $_GET['alu_pendencia']:NULL ; ?>" target="_blank" class="fa fa-file-pdf-o btn btn-danger" aria-hidden="true"></a>
             <a type="button" href="excel2.php?alu_pendencia=<?php echo isset($_GET['alu_pendencia'])? $_GET['alu_pendencia']:NULL ; ?>" class="fa fa-file-excel-o btn btn-success" aria-hidden="true"></a>
