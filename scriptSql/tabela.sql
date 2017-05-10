@@ -1,3 +1,6 @@
+CREATE DATABASE fib;
+USE fib;
+
 CREATE TABLE estagio
 (
 
@@ -7,7 +10,7 @@ CREATE TABLE estagio
 	alu_celular							VARCHAR(30),
 	alu_email							VARCHAR(100),
 	alu_anoturma						INTEGER,
-	alu_trabalha 						CHAR(1) DEFAULT 'N',						
+	alu_trabalha 						CHAR(1) DEFAULT 'N',
 	alu_empresa 						VARCHAR(50),
 	alu_dt_trabalha						DATE,
 	alu_carteira 						CHAR(1) DEFAULT 'N',

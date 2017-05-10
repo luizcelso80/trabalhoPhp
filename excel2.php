@@ -9,11 +9,11 @@ require_once 'classes/Estagio.php';
 $relatorio = new Estagio();
 $alu_pendencia = $_GET['alu_pendencia'];
 if($alu_pendencia == 's' || $alu_pendencia == 'n'){
-	$res = $relatorio->pendencia($alu_pendencia);
+	$res = $relatorio->declaraFib($alu_pendencia);
 	if($alu_pendencia == 's'){
-		$doc = "Alunos-Pendentes";
-	}else{
 		$doc = "Alunos-Regularizados";
+	}else{
+		$doc = "Alunos-Pendentes";
 	}
 }else{
 	$res = $relatorio->findAll();

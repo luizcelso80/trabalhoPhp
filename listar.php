@@ -1,11 +1,12 @@
-	<div id="listar" class="col-md-5 col-md-offset-3">
+	<div id="listar" class="col-md-8 col-md-offset-2">
 		<table class="table table-striped table-responsive table-condensed">
 			<thead>
 				<th>Id</th>
 				<th>Nome</th>
 				<th>Ra</th>
 				<th>Email</th>
-				<th colspan="2">Acoes</th>
+				<th align="left" colspan="2">Acoes</th>
+				<th align="right">Imprimir Declaracao</th>
 			</thead>
 			<tbody>
 				<?php foreach ( $listagem as $key => $value) { ?>
@@ -14,7 +15,7 @@
 					<td><?php echo $value->alu_nome; ?></td>
 					<td><?php echo $value->alu_ra; ?></td>
 					<td><?php echo $value->alu_email; ?></td>
-					<td>
+					<td align="left">
 						<button type="button" class="btn btn-warning btn-xs" data-toggle="modal" data-target="#modalAlterar" data-alu_id="<?php echo $value->alu_id; ?>"
                         data-alu_nome="<?php echo $value->alu_nome; ?>"
                         data-alu_ra="<?php echo $value->alu_ra; ?>"
@@ -41,15 +42,18 @@
 						    <span class="glyphicon glyphicon-pencil"></span>
 						</button>
 					</td>
-					<td>
+					<td align="left">
 						<a href="?excluir=<?php echo $value->alu_id; ?>" type="button" class="btn btn-danger btn-xs">
 						    <span class="glyphicon glyphicon-trash"></span>
+						</a>
+					</td>
+					<td align="right">
+						<a target="_blank" href="imprimeDeclaracao.php?alu_id=<?php echo $value->alu_id; ?>" type="button" class="fa fa-file-pdf-o btn btn-danger btn-xs">
 						</a>
 					</td>
 				</tr>
 				<?php } ?>
 			</tbody>
 		</table>
-		<a type="button" href="imprimir.php?alu_pendencia=<?php echo isset($_GET['alu_pendencia'])? $_GET['alu_pendencia']:NULL ; ?>" target="_blank" class="fa fa-file-pdf-o btn btn-danger" aria-hidden="true"></a>
-		<a type="button" href="excel.php?alu_pendencia=<?php echo isset($_GET['alu_pendencia'])? $_GET['alu_pendencia']:NULL ; ?>" class="fa fa-file-excel-o btn btn-success" aria-hidden="true"></a>
+		
 	</div>
