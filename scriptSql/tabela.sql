@@ -1,3 +1,6 @@
+CREATE DATABASE fib;
+USE fib;
+
 CREATE TABLE estagio
 (
 
