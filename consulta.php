@@ -67,6 +67,14 @@ $listagem = $lista->findAll();
                      // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
                      // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
                      var modal = $(this)
+
+                     if(alu_trabalha == 's'){
+                        modal.find('#alu_trabalha1').prop("checked", true)
+                        modal.find('#alu_trabalha2').prop("checked", false)
+                     }else if(alu_trabalha == 'n'){
+                        modal.find('#alu_trabalha1').prop("checked", false)
+                        modal.find('#alu_trabalha2').prop("checked", true)
+                     }
                      
                      modal.find('.modal-body input[id=alu_nome]').val(recipient)
                      modal.find('#alu_id').val(alu_id)
